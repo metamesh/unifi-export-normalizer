@@ -26,17 +26,16 @@ end
 
 output = CSV.generate do |csv|
   CSV.foreach INPUT_FILE do |row|
-    # position = ROW_DATA.index(:duration)
-    # unnormalized = row[position]
-    # if unnormalized
-    #   row[position] = UnifiNormalizer::DurationNormalizer.normalize unnormalized
-    # end
     with_truthy_column row, :duration do |unnormalized|
       UnifiNormalizer::DurationNormalizer.normalize unnormalized
     end
+    with_truthy_column row, :tx do |unnormalized|
+      UnifiNormalizer::TransferNormalizer.normalize unnormalized
+    end
+    with_truthy_column row, :rx do |unnormalized|
+      UnifiNormalizer::TransferNormalizer.normalize unnormalized
+    end
 
-    #row[:rx] = TransferNormalizer::normalize_transfer row[:rx]
-    #row[:tx] = TransferNormalizer::normalize_transfer row[:tx]
     csv << row
   end
 end
