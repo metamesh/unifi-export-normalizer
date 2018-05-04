@@ -13,3 +13,13 @@ This little ditty normalizes the data by
     ruby bin/normalize-unifi.rb input.csv > output.csv
 
 or install it as a gem and you can shorten it to simply `normalize-unifi`.
+
+## Contributing
+
+Ensure that all tests pass:
+
+    rake
+
+Develop using Guard:
+
+    bundle exec guard
