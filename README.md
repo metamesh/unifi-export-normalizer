@@ -8,6 +8,14 @@ This little ditty normalizes the data by
 * converting session duration to minutes
 * converting data transfer to megabytes
 
+## Installation
+
+Clone this repo and then get dependencies with:
+
+    gem install bundler && bundle install
+
+I may package this as a Gem if gets used often enough to merit it.
+
 ## Usage
 
     ruby bin/normalize-unifi.rb input.csv > output.csv
