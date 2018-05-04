@@ -10,5 +10,6 @@ This little ditty normalizes the data by
 
 ## Usage
 
-    normalize-unifi.rb input.csv > output.csv
+    ruby bin/normalize-unifi.rb input.csv > output.csv
 
+or install it as a gem and you can shorten it to simply `normalize-unifi`.
